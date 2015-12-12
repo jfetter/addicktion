@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title></title>
+        <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="lib/ionic/js/ionic.bundle.js"></script>
+        <script src="lib/ng-cordova.min.js"></script>
+        <script src="cordova.js"></script>
+        <script src="js/app.js"></script>
+    </head>
+    <body ng-app="starter">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Addicktion</h1>
+      </ion-header-bar>
+
+        <ion-content class="submissions" ng-controller="ExampleController">
+          <input ng-model="userName" type="text" placeholder"your name" >
+          <input ng-model="userStory" type="text" placeholder"your story" >
+          <button ng-model="userPic" class="button" ng-click="upload()">Get your dick pic up</button>
+          <button ng-click="submit()" class="submission">Submit</button>
+        </ion-content>
+      
+      <ion-content> 
+       <div class="" ng-repeat="dick in dickpics track by index">
+         <span class="name">{{uName}}</span>
+         <img src={{image}} alt="">
+         <span class="uStory">{{uStory}}</span>
+         <span class="currentVotes">{{currentVotes}}</span>
+         <button ng-click="vote()">vote</button>
+      </div>
+
+      
+       <div class="footer">
+          <a ui-sref="graph">see which dicks are on the rise</a> 
+         <!-- bar graph alternate comment. check out how the datas shaping up. see the hard numbers from your poll-->
+       </div>
+
+      </ion-content>
+
+    </ion-pane>
+
+    <script src="js.controllers.js"></script>
+  </body>
+</html>
